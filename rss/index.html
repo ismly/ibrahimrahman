@@ -1,5 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ibrahim Rahman]]></title><description><![CDATA[Tech Enthusiast. Minimalist.]]></description><link>http://my-ghost-blog.com/</link><generator>Ghost v0.4.2</generator><lastBuildDate>Thu, 03 Jul 2014 14:53:48 GMT</lastBuildDate><atom:link href="http://my-ghost-blog.com/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Welcome to Ghost]]></title><description><![CDATA[<p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ibrahim Rahman]]></title><description><![CDATA[Tech Enthusiast. Minimalist.]]></description><link>http://my-ghost-blog.com/</link><generator>Ghost v0.4.2</generator><lastBuildDate>Thu, 03 Jul 2014 21:58:37 GMT</lastBuildDate><atom:link href="http://my-ghost-blog.com/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[[Guide]: Host a blog on GitHub for free]]></title><description><![CDATA[<p>If you're looking to host a beautiful blog without being hard on your wallet, this guide will help you do just that, without having you spend a single dime.</p>
+
+<h3 id="enterghost">Enter Ghost</h3>
+
+<p><img src='http://my-ghost-blog.com/content/images/2014/Jul/ghost.png'  alt="Ghost" /></p>
+
+<p>You've probably already heard of/know about the Ghost Blogging Platform but if you haven't, I suggest you take a look at the <a href='http://ghost.org/' >Ghost website</a> and see what it has to offer. This is a relatively new and increasingly popular javascript based platform that runs on <a href='http://nodejs.org/' >Node.js Server</a>. <br />
+We'll be running Ghost locally. Setting it up is fairly easy. I'm using a linux system so if you're <br />
+on another operating system, the commands/methods may differ.</p>
+
+<p>We'll start off by installing node.js and npm. Fire up a terminal and enter the following:</p>
+
+<pre><code>sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+</code></pre>
+
+<p>Next step is to download and install ghost.</p>
+
+<pre><code>wget "https://ghost.org/zip/ghost-0.4.2.zip"
+unzip ghost-0.4.2.zip -d ghost
+cd ghost
+cp config.example.js config.js
+npm install
+</code></pre>
+
+<p>Once Ghost is up and running, open up a browser and navigate to <a href='http://localhost:2368/ghost' >http://localhost:2368/ghost</a> to complete the sign up process and make make all the necesary changes.</p>
+
+<h3 id="hostingongithubpages">Hosting on GitHub Pages</h3>
+
+<p><img src='http://my-ghost-blog.com/content/images/2014/Jul/GitHub_Pages.png'  alt="GitHub Pages" /></p>
+
+<p>Git is a version controlling system and GitHub, a Git repository hosting service. Github Pages is a feature of Github which allows users to host static 'websites for you and your projects'. It is very popular among the Jekyll crowd but can also be used to host blogs based on Ghost.</p>
+
+<h4 id="whygithubanyway">Why GitHub anyway?</h4>
+
+<p>While it's true that there are many free one-click alternatives for hosting Ghost blogs, they do come with several limitations like limited posts per week and limited views per month and inablity to install custom themes etc etc.</p>
+
+<p>On the other hand, hosting on GitHub allows you to have complete control over your blog, with no limitations on posting and stuff. It uses <a href='https://www.fastly.com/' >Fastly CDN</a> which automatically improves the performance of your website. You can publish and review a post locally, without requiring an internet connection, before pushing it online. Plus you can stop worrying about downtime as it is fairly uncommon on GitHub. Additionally it allows browsing your website over HTTPS freely as long as you're not using a custom domain.</p>
+
+<p>Hosting on GitHub does has its downsides for example, you're restricted to blogging from the computer which houses your ghost installation but these are easily outnumbered by its numerous benefits.</p>
+
+<p>Let install git and set it up. (If you don't have a GitHub account yet, make one <a href='https://github.com/' >now</a>.</p>
+
+<pre><code>sudo apt-get install git
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+</code></pre>
+
+<p>Remember to change YOUR NAME and Your EMAIL ADDRESS (same as the one you used to sign up on GitHub) <br />
+Now head over to GitHub and create a new <a href='https://github.com/new' >repository</a>. The name should be username.github.io, where username is your username on GitHub (in my case it was ibrahimrahman.github.io). This will be the domain of your blog once it's finished. Don't worry, you can also assign a custom domain to your blog.</p>
+
+<h3 id="buster">Buster</h3>
+
+<p>GitHub pages is for hosting static sites and Ghost blogs are in no way, static. This creates a problem. This is were <a href='https://github.com/axitkhurana/buster' >Buster</a> comes in. Created by GitHub user <a href='https://github.com/axitkhurana/' >axitkhurana</a>, buster is a 'Super simple, Totally awesome, Brute force static site generator for Ghost.' <br />
+Static sites have their own benefits like</p>
+
+<ul>
+<li>no database on the server</li>
+<li>better performance due to no database requests and easier caching by browsers, among other things</li>
+<li>better security due to the absence of an admin backend</li>
+</ul>
+
+<p>To setup buster, we need Pip, a package management system used to install and manage software packages written in Python. By default Pip isn't installed on most systems. Atleasr in my case it wasn't, and I may be wrong but since I'm using Elementary OS which is based on Ubuntu, I think it's safe to say that it's not installed on Ubuntu either. <br />
+Let's install pip</p>
+
+<pre><code>sudo apt-get install python-pip python-dev build-essential
+pip install --upgrade pip
+sudo pip install --upgrade virtualenv 
+</code></pre>
+
+<p>Setting up buster is easy. Just enter <code>pip install buster</code> and youre ready to go. If you're on a Mac, you also might want to run <code>brew install wget</code> (required by Buster).</p>
+
+<p>Now, while Ghost it still running, create a new directory outside of the Ghost directory (I named it ghost-static for my ease) and <code>cd</code> into that directory. Run <code>buster setup</code>. When prompted, enter the address of the GitHub repository you just created. In my case it was <a href='https://github.com/ibrahimrahman/ibrahimrahman.github.io' >https://github.com/ibrahimrahman/ibrahimrahman.github.io</a>. </p>
+
+<p>Now run <code>buster generate --domain=http://127.0.0.1:2368</code>. This will generate all the required static files under a subfolder static. <code>cd static</code> to switch to the subfolder and enter the following:</p>
+
+<pre><code>git add -all
+git commit -m '1st commit'
+git push
+</code></pre>
+
+<p>When prompted, enter the username and password associated with your github account. Alternatively, you can simply use the command <code>buster deploy</code> and your repo will be uploaded to GitHub.</p>
+
+<p>It will take a few minutes for your blog to appear on username.github.io. It took around 10 or 15 minutes for me.</p>
+
+<p>Note: Since this is a static site, it doesn't have any admin backend so you will <strong>not</strong> be able to login over the web.</p>
+
+<hr />
+
+<h3 id="somestuffthatyoushouldknow">Some stuff that you should know</h3>
+
+<p>You might want to edit the config.js in your Ghost installation directory to include set up your mail configuration, website address and stuff. <br />
+After editing any file that you may wish to change, or after publishing a new blog post or editing any existing post, to push the content online just <code>cd</code> into the static files folder (in my cast it was ghost-static) and run <code>buster deploy</code> and you're good to go. To preview what has been generated before pushing the changes online simply enter <code>buster preview</code> and navigate to localhost:9000 in your web browser.</p>
+
+<h4 id="customdomains">Custom domains</h4>
+
+<p>To add a custom domain to your blog just run <code>buster add-domain &lt;domain-name&gt;</code> from your static-website directory. This command adds a CNAME file with custom domain name as required by GitHub Pages. Commit and push the changes to your GitHub repository and update your DNS records.</p>
+
+<p>If your changes do not appear online, just clear your browser's cache and you're good to go.</p>
+
+<p>Congratulations, you have an awesome blog up and running for no cost at all! Happy blogging!</p>]]></description><link>http://my-ghost-blog.com/guide-hosting-a-ghost-blog-on-github-for-free/</link><guid isPermaLink="false">ab8a475b-a227-4769-8e32-bf9a91b1f5f3</guid><category><![CDATA[Host]]></category><category><![CDATA[Blog]]></category><category><![CDATA[Github]]></category><category><![CDATA[Ghost]]></category><category><![CDATA[Free]]></category><dc:creator><![CDATA[Ibrahim Rahman]]></dc:creator><pubDate>Thu, 03 Jul 2014 21:18:30 GMT</pubDate></item><item><title><![CDATA[Welcome to Ghost]]></title><description><![CDATA[<p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
 
 <h2 id="gettingstarted">Getting Started</h2>
 
