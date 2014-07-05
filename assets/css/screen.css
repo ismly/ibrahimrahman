@@ -458,6 +458,7 @@ margin on the iframe, cause it breaks stuff. */
     color: #fff;
     background: #303538 no-repeat center center;
     background-size: cover;
+    background-attachment:fixed;
 }
 
 .blog-logo {
