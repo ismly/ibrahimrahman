@@ -8,7 +8,7 @@ $(document).ready(function() {
 	var emailObject = Parse.Object.extend("emailObject");
 	
  
-	$("#commentForm").on("submit", function(e) {
+	$("#myform").on("submit", function(e) {
 		e.preventDefault();
  
 		console.log("Handling the submit");
@@ -16,9 +16,10 @@ $(document).ready(function() {
 		//gather the form data
  
 		var data = {};
-		data.name = $("#name").val();
-		data.email = $("#email").val();
-		data.comments = $("#comments").val();
+		data.q1 = $("#q1").val();
+		data.q2 = $("#q2").val();
+		data.q4 = $("#q4").val();
+		data.q5 = $("#q5").val();
  
 		var comment = new emailObject();
 		comment.save(data, {
