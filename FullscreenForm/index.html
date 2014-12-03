@@ -28,7 +28,10 @@
 						<a class="codrops-icon codrops-icon-info" href="#"><span>This is a demo for a fullscreen form</span></a>
 					</div>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" form action="https://getsimpleform.com/messages?form_api_token=c4c9ae053bcc89f41551b1977a395f09" method="post">
+  <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+  <input type='hidden' name='redirect_to' value='<the complete return url e.g. http:/ibrahimrahman.github.io>' />
+			
 					<ol class="fs-fields">
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
@@ -99,10 +102,7 @@
 			</div>
 
 		</div><!-- /container -->
-        <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>         
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="js/emailer.js"></script>		
-        <script src="js/classie.js"></script>
+	        <script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
 		<script>
