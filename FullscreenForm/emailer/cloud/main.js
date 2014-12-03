@@ -2,7 +2,7 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
 
-var API = "Your MailGun API Key"
+var API = "key-be08724fb28a4bf6a1e3cbfb56374006"
 var Domain = "sandbox9a3dfe10d19f48b487cd88771cb89057.mailgun.org"
 var Mailgun = require('mailgun');
 Mailgun.initialize(Domain, API);
