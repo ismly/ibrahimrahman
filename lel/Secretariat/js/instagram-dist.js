@@ -1,0 +1,2 @@
+var Instagram=function(e,t){function a(){$.ajax({type:"GET",url:"https://api.instagram.com/v1/tags/coffee/media/recent?access_token=fb2e77d.47a0479900504cb3ab4a1f626d174d2d",dataType:"jsonp",success:function(e){console.log("Instagram:",e)}})}{var n={baseUrl:"http://search.twitter.com/search.json?q=",searchString:"404",displayCount:5,updateInterval:1e4,filters:[]},t=$.extend(n,t),s=document.getElementById(e);t.searchUrl}s||console.error("No Element");!function(){a()}()};
+//# sourceMappingURL=instagram-dist.js.map

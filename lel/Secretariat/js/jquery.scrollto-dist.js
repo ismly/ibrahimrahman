@@ -1,0 +1,2 @@
+$.scrollTo=$.fn.scrollTo=function(o,t,n){return this instanceof $?(n=$.extend({},{gap:{x:0,y:-80},animation:{easing:"swing",duration:800,complete:$.noop,step:$.noop}},n),this.each(function(){var a=$(this);a.stop().animate({scrollLeft:isNaN(Number(o))?$(t).offset().left+n.gap.x:o,scrollTop:isNaN(Number(t))?$(t).offset().top+n.gap.y:t},n.animation)})):$.fn.scrollTo.apply($("html, body"),arguments)};
+//# sourceMappingURL=jquery.scrollto-dist.js.map
