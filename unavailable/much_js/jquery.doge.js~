@@ -6,7 +6,7 @@
         var doge = $('body').css('font-family', 'Comic Sans MS, Comic Sans, Chalkboard, cursive');
         
         //  much array
-        tings = $.extend(['bimun', 'delay', 'inconvenience', 'loss', 'aamir', 'arooj', ], tings);
+        tings = $.extend(['doge', 'shibe', 'excite', 'impress', 'skill', 'warn'], tings);
         
         var r = function(arr) {
             if(!arr) arr = tings; return arr[Math.floor(Math.random() * arr.length)];
@@ -15,7 +15,7 @@
         var dogefix = [
             'wow', 'such ' + r(), 'very ' + r(), 'much ' + r(),
             'wow', 'such ' + r(), 'very ' + r(), 'much ' + r(),
-            'so ' + r(), 'many ' + r(),
+            'so ' + r(), 'many ' + r(), 'want ' + r(),
             'wow', 'wow'
         ];
         
