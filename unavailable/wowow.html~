@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="such_css/many_style.css" type="text/css" />
+</head>
+<body>
+<h1 id="so-bimun">So bimun</h1>
+<p>TheBIMUN server was raided by the Internet Police, who seized servers, computers, and other equipment at 21:32:57 GMT 21/12/14 . We are trying our best to get the website up and running. Sorry for the inconvenice, we’ll make sure you get to register in time. Wow.</p>
+<div class="figure">
+<img src="img_amaze/very_bimun.png" alt="so bimun" /><p class="caption">so bimun</p>
+</div>
+<p><a href="https://www.facebook.com/TheBIMUN">much socialise</a> | <a href="such_grumpy.html">many doge. Give cat</a></p>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script src="jquery.doge.js"></script>
+     <script>
+         $($.doge);
+     </script>
+</html>
