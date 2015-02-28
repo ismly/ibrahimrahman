@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>[Guide]: Host a Ghost blog on GitHub Pages for free</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=a695f41c07" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+    
+    <meta name="generator" content="Ghost 0.5" />
+<link rel="alternate" type="application/rss+xml" title="Ibrahim Rahman" href="../rss/index.html">
+<link rel="canonical" href="http://ibrahimrahman.github.io/guide-host-a-ghost-blog-on-github-pages-for-free/" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-39422124-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<body class="post-template tag-host tag-blog tag-github tag-ghost-tag tag-free">
+
+    
+    
+
+
+
+<nav class="main-nav clearfix">
+    <a class="back-button icon-arrow-left" href="http://ibrahimrahman.github.io">Home</a>
+    <a class="subscribe-button icon-feed" href="http://ibrahimrahman.github.io/rss/">Subscribe</a>
+</nav>
+
+<main class="content" role="main">
+
+    <article class="post tag-host tag-blog tag-github tag-ghost-tag tag-free">
+    
+    
+
+        <header class="post-header">
+            <h1 class="post-title">[Guide]: Host a Ghost blog on GitHub Pages for free</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2014-07-04">04 July 2014</time>  on <a href="../tag/host/index.html">Host</a>, <a href="../tag/blog/index.html">Blog</a>, <a href="../tag/github/index.html">Github</a>, <a href="../tag/ghost-tag/index.html">Ghost</a>, <a href="../tag/free/index.html">Free</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>If you're looking to host a beautiful blog without being hard on your wallet, this guide will help you do just that, without having you spend a single dime.</p>
+
+<h3 id="enterghost">Enter Ghost</h3>
+
+<p><img src="../content/images/2014/Jul/ghost.png" alt="Ghost" /></p>
+
+<p>You've probably already heard of/know about the Ghost Blogging Platform but if you haven't, I suggest you take a look at the <a href="http://ghost.org">Ghost website</a> and see what it has to offer. This is a relatively new and increasingly popular javascript based platform that runs on <a href="http://nodejs.org/">Node.js Server</a>. <br />
+We'll be running Ghost locally. Setting it up is fairly easy. I'm using a linux system so if you're <br />
+on another operating system, the commands/methods may differ.</p>
+
+<p>We'll start off by installing node.js and npm. Fire up a terminal and enter the following:</p>
+
+<pre><code>sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+</code></pre>
+
+<p>Next step is to download and install ghost.</p>
+
+<pre><code>wget "https://ghost.org/zip/ghost-0.4.2.zip"
+unzip ghost-0.4.2.zip -d ghost
+cd ghost
+cp config.example.js config.js
+npm install
+npm start
+</code></pre>
+
+<p>Once Ghost is up and running, open up a browser and navigate to <a href='http://localhost:2368/ghost'>http://localhost:2368/ghost</a> to complete the sign up process and make make all the necesary changes.</p>
+
+<h3 id="hostingongithubpages">Hosting on GitHub Pages</h3>
+
+<p><img src="../content/images/2014/Jul/GitHub_Pages.png" alt="GitHub Pages" /></p>
+
+<p>Git is a version controlling system and GitHub, a Git repository hosting service. Github Pages is a feature of Github which allows users to host static 'websites for you and your projects'. It is very popular among the Jekyll crowd but can also be used to host blogs based on Ghost.</p>
+
+<h4 id="whygithubanyway">Why GitHub anyway?</h4>
+
+<p>While it's true that there are many free one-click alternatives for hosting Ghost blogs, they do come with several limitations like limited posts per week and limited views per month and inablity to install custom themes etc etc.</p>
+
+<p>On the other hand, hosting on GitHub allows you to have complete control over your blog, with no limitations on posting and stuff. It uses <a href="https://www.fastly.com/">Fastly CDN</a> which automatically improves the performance of your website. You can publish and review a post locally, without requiring an internet connection, before pushing it online. Plus you can stop worrying about downtime as it is fairly uncommon on GitHub. Additionally it allows browsing your website over HTTPS freely as long as you're not using a custom domain.</p>
+
+<p>Hosting on GitHub does has its downsides for example, you're restricted to blogging from the computer which houses your ghost installation but these are easily outnumbered by its numerous benefits.</p>
+
+<p>Let's install git and set it up. (If you don't have a GitHub account yet, make one <a href="https://github.com/">now</a>.</p>
+
+<pre><code>sudo apt-get install git
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+</code></pre>
+
+<p>Remember to change YOUR NAME and Your EMAIL ADDRESS (same as the one you used to sign up on GitHub) <br />
+Now head over to GitHub and create a new <a href="https://github.com/new">repository</a>. The name should be username.github.io, where username is your username on GitHub (in my case it was ibrahimrahman.github.io). This will be the domain of your blog once it's finished. Don't worry, you can also assign a custom domain to your blog.</p>
+
+<h3 id="buster">Buster</h3>
+
+<p>GitHub pages is for hosting static sites and Ghost blogs are in no way, static. This creates a problem. This is were <a href="https://github.com/axitkhurana/buster">Buster</a> comes in. Created by GitHub user <a href="https://github.com/axitkhurana/">axitkhurana</a>, buster is a 'Super simple, Totally awesome, Brute force static site generator for Ghost.' <br />
+Static sites have their own benefits like</p>
+
+<ul>
+<li>no database on the server</li>
+<li>better performance due to no database requests and easier caching by browsers, among other things</li>
+<li>better security due to the absence of an admin backend</li>
+</ul>
+
+<p>To setup buster, we need Pip, a package management system used to install and manage software packages written in Python. By default Pip isn't installed on most systems. Atleasr in my case it wasn't, and I may be wrong but since I'm using Elementary OS which is based on Ubuntu, I think it's safe to say that it's not installed on Ubuntu either. <br />
+Let's install pip</p>
+
+<pre><code>sudo apt-get install python-pip python-dev build-essential
+pip install --upgrade pip
+sudo pip install --upgrade virtualenv 
+</code></pre>
+
+<p>Setting up buster is easy. Just enter <code>pip install buster</code> and youre ready to go. If you're on a Mac, you also might want to run <code>brew install wget</code> (required by Buster).</p>
+
+<p>Now, while Ghost it still running, create a new directory outside of the Ghost directory (I named it ghost-static for my ease) and <code>cd</code> into that directory. Run <code>buster setup</code>. When prompted, enter the address of the GitHub repository you just created. In my case it was <a href='https://github.com/ibrahimrahman/ibrahimrahman.github.io'>https://github.com/ibrahimrahman/ibrahimrahman.github.io</a>. </p>
+
+<p>Now run <code>buster generate --domain=http://127.0.0.1:2368</code>. This will generate all the required static files under a subfolder static. <code>cd static</code> to switch to the subfolder and enter the following:</p>
+
+<pre><code>git add -all
+git commit -m '1st commit'
+git push
+</code></pre>
+
+<p>When prompted, enter the username and password associated with your github account. Alternatively, you can simply use the command <code>buster deploy</code> and your repo will be uploaded to GitHub.</p>
+
+<p>It will take a few minutes for your blog to appear on username.github.io. It took around 10 or 15 minutes for me.</p>
+
+<p>Note: Since this is a static site, it doesn't have any admin backend so you will <strong>not</strong> be able to login over the web.</p>
+
+<hr />
+
+<h3 id="somestuffthatyoushouldknow">Some stuff that you should know</h3>
+
+<p>You might want to edit the config.js in your Ghost installation directory to include set up your mail configuration, website address and stuff. <br />
+After editing any file that you may wish to change, or after publishing a new blog post or editing any existing post, to push the content online just <code>cd</code> into the static files folder (in my cast it was ghost-static) and run <code>buster deploy</code> and you're good to go. To preview what has been generated before pushing the changes online simply enter <code>buster preview</code> and navigate to localhost:9000 in your web browser.</p>
+
+<h4 id="customdomains">Custom domains</h4>
+
+<p>To add a custom domain to your blog just run <code>buster add-domain &lt;domain-name&gt;</code> from your static-website directory. This command adds a CNAME file with custom domain name as required by GitHub Pages. Commit and push the changes to your GitHub repository and update your DNS records.</p>
+
+<p>If your changes do not appear online, just clear your browser's cache and you're good to go.</p>
+
+<p>Congratulations, you have an awesome blog up and running for no cost at all! Happy blogging!</p>
+        </section>
+
+        <footer class="post-footer">
+
+        
+        
+
+            
+
+            <section class="author">
+                <h4><a href="../author/ibrahim-rahman/index.html">Ibrahim Rahman</a></h4>
+
+                
+                    <p>Read <a href="../author/ibrahim-rahman/index.html">more posts</a> by this author.</p>
+                
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+        
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=%5BGuide%5D%3A%20Host%20a%20Ghost%20blog%20on%20GitHub%20Pages%20for%20free&amp;url=http://ibrahimrahman.github.io/guide-host-a-ghost-blog-on-github-pages-for-free/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://ibrahimrahman.github.io/guide-host-a-ghost-blog-on-github-pages-for-free/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://ibrahimrahman.github.io/guide-host-a-ghost-blog-on-github-pages-for-free/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    
+
+ <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ibrahimrahman'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </article>
+    
+</main>
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://ibrahimrahman.github.io">Ibrahim Rahman</a> &copy; 2014</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    
+    <script src="../public/jquery.js?v=a695f41c07"></script>
+
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=a695f41c07"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=a695f41c07"></script>
+
+</body>
+</html>
