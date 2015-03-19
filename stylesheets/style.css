@@ -9,11 +9,11 @@ body {
 
     ::selection {
     background: transparent; /* WebKit/Blink Browsers */
-    color: #dd4814;
+    color: #d64937;
 }
     ::-moz-selection {
     background: transparent; /* Gecko Browsers */
-    color: #dd4814;
+    color: #d64937;
 }
 
 section#card {
@@ -58,7 +58,7 @@ h2 a:link,
 h2 a:visited,
 h2 a:active,
 h2 a:hover {
-	border-bottom: 2px solid #ccc;
+	color: #000000;
 }
 
 ul {
