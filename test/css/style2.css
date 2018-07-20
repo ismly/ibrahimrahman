@@ -1,0 +1,75 @@
+body {
+font-family: 'Roboto', sans-serif;
+}
+
+section {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.content {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.logo {
+  max-width: 100%;
+  padding-bottom: 15px;
+}
+
+.intro {
+  background: colora;
+  /* text-align: center; */
+}
+
+.about {
+  /* background: green; */
+  height: 100%;
+}
+
+.fas{
+  padding: 20px;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fab{
+  padding: 20px;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+	color: #4A4A4A;
+    -o-transition:color .2s ease-out;
+    -ms-transition:color .2s ease-out;
+    -moz-transition:color .2s ease-out;
+    -webkit-transition:color .2s ease-out;
+    transition:color .2s ease-out;
+	border: none;
+	text-decoration: none;
+
+	font-weight: 100;
+}
+
+a:hover {
+	color: #000000;
+}

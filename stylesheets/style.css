@@ -4,16 +4,16 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	background-color: #F6F6F6;
 	color: #4A4A4A;
-    
+
 }
 
-    ::selection {
-    background: transparent; /* WebKit/Blink Browsers */
-    color: #d64937;
+::selection {
+	background: transparent; /* WebKit/Blink Browsers */
+	color: #d64937;
 }
-    ::-moz-selection {
-    background: transparent; /* Gecko Browsers */
-    color: #d64937;
+::-moz-selection {
+	background: transparent; /* Gecko Browsers */
+  color: #d64937;
 }
 
 section#card {
